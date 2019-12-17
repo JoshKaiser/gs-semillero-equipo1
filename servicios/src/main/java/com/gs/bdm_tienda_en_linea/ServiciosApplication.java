@@ -1,4 +1,4 @@
-package com.gs.semillero;
+package com.gs.bdm_tienda_en_linea;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
