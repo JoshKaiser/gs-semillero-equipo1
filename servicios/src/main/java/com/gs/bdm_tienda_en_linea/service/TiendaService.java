@@ -15,16 +15,16 @@ import lombok.extern.slf4j.Slf4j;
 
 @CrossOrigin
 @RestController
-@RequestMapping(value="/api/bdm/tiendapp")
 @Slf4j
+@RequestMapping(value="/api/bdm/tiendapp")
 public class TiendaService {
 
 	@Autowired
 	RegistroClienteBusiness registroCliente;
 	
 	@RequestMapping(value="registrodeusuario", method=RequestMethod.POST, consumes=MediaType.TEXT_PLAIN_VALUE, produces=MediaType.TEXT_PLAIN_VALUE)
-	public ResponseEntity<String> registrarCliente(@RequestBody String request, HttpServletRequest httpServlet){
-		return (ResponseEntity<String>) registroCliente
+	public ResponseEntity<String> registrarCliente(@RequestBody String request,  httpServlet){
+		return (ResponseEntity<String>) registroCliente.registrarCliente(request, httpServlet.getSession(false));
 	}
 	
 
