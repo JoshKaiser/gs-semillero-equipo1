@@ -1,5 +1,7 @@
 package com.gs.bdm_tienda_en_linea.service;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +25,7 @@ public class TiendaService {
 	RegistroClienteBusiness registroCliente;
 	
 	@RequestMapping(value="registrodeusuario", method=RequestMethod.POST, consumes=MediaType.TEXT_PLAIN_VALUE, produces=MediaType.TEXT_PLAIN_VALUE)
-	public ResponseEntity<String> registrarCliente(@RequestBody String request,  httpServlet){
+	public ResponseEntity<String> registrarCliente(@RequestBody String request, HttpServletRequest httpServlet){
 		return (ResponseEntity<String>) registroCliente.registrarCliente(request, httpServlet.getSession(false));
 	}
 	
